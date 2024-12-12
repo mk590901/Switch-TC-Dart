@@ -23,8 +23,4 @@ class ThreadedCodeExecutor {
     }
   }
 
-  // void trace(String state, String event) {
-  //   print('[$state,$event]: $_functions -> [$_targetState]');
-  // }
-
 }
