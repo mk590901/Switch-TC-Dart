@@ -9,11 +9,11 @@ class Switch_resetHelper {
 		createHelper();
 	}
 
-	void switchEntry([Object? data]) {
-	}
-
-	void switchInit([Object? data]) {
-	}
+	// void switchEntry([Object? data]) {
+	// }
+	//
+	// void switchInit([Object? data]) {
+	// }
 
 	void offEntry([Object? data]) {
 		print ('OFF');
@@ -23,8 +23,8 @@ class Switch_resetHelper {
 		print ('@RESET');
 	}
 
-	void offExit([Object? data]) {
-	}
+	// void offExit([Object? data]) {
+	// }
 
 	void offTurn([Object? data]) {
 		print ('OFF: TURN');
@@ -34,8 +34,8 @@ class Switch_resetHelper {
 		print ('ON ');
 	}
 
-	void onExit([Object? data]) {
-	}
+	// void onExit([Object? data]) {
+	// }
 
 	void onTurn([Object? data]) {
 		print ('ON : TURN');
@@ -51,14 +51,14 @@ class Switch_resetHelper {
 
 	void createHelper() {
 		helper_.insert('switch', 'init', ThreadedCodeExecutor(helper_, 'off', [
-			switchEntry,
-			switchInit,
+			// switchEntry,
+			// switchInit,
 			offEntry,
 		]));
 		helper_.insert('off', 'RESET', ThreadedCodeExecutor(helper_, 'off', [
 			offReset,
-			offExit,
-			switchInit,
+			// offExit,
+			// switchInit,
 			offEntry,
 		]));
 		helper_.insert('off', 'TURN', ThreadedCodeExecutor(helper_, 'on', [
@@ -67,16 +67,16 @@ class Switch_resetHelper {
 		]));
 		helper_.insert('on', 'RESET', ThreadedCodeExecutor(helper_, 'off', [
 			offReset,
-			onExit,
-			offExit,
-			switchInit,
+			// onExit,
+			// offExit,
+			// switchInit,
 			offEntry,
 		]));
 		helper_.insert('on', 'TURN', ThreadedCodeExecutor(helper_, 'off', [
 			onTurn,
-			onExit,
-			offExit,
-			switchInit,
+			// onExit,
+			// offExit,
+			// switchInit,
 			offEntry,
 		]));
 	}
