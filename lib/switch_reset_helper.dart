@@ -49,6 +49,10 @@ class Switch_resetHelper {
 		helper_.post(eventName);
 	}
 
+	String state() {
+		return helper_.getState();
+	}
+
 	void createHelper() {
 		helper_.insert('switch', 'init', ThreadedCodeExecutor(helper_, 'off', [
 			// switchEntry,
